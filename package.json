@@ -1,0 +1,29 @@
+{
+	"name": "boilerplate",
+	"version": "0.0.1",
+	"author": "Tanishq Kancharla <tanishqkancharla3@gmail.com>",
+	"description": "",
+	"keywords": [],
+	"license": "MIT",
+	"main": "build/index.js",
+	"files": [
+		"build/*"
+	],
+	"repository": {
+		"url": "https://github.com/tanishqkancharla/teg"
+	},
+	"scripts": {
+		"typecheck": "tsc --noEmit",
+		"build": "tsc",
+		"clean": "rm -rf build",
+		"watch": "tsc --watch",
+		"release": "npm run clean; npm run build; npm publish",
+		"test": "jest --verbose"
+	},
+	"devDependencies": {
+		"@types/jest": "^27.5.0",
+		"jest": "^28.1.0",
+		"typescript": "^4.6.4"
+	},
+	"dependencies": {}
+}
