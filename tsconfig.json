@@ -9,6 +9,7 @@
 		"sourceMap": true,
 		"lib": ["ES2018", "DOM"],
 		"outDir": "dist",
+
 		"declaration": true,
 
 		"jsx": "react",
