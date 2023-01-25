@@ -25,9 +25,9 @@ export function reducersToDispatcher<S, R extends AnyReducers<S>>(props: {
 			const state = getState();
 			const reducer = reducers[reducerKey];
 			const newState = reducer(state, ...args);
-			if (shallowEqual(state, newState)) return true;
+			if (shallowEqual(state, newState)) return false;
 			dispatch(newState);
-			return false;
+			return true;
 		};
 		return result;
 	}, {} as any) as Dispatcher<R, boolean>;
