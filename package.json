@@ -9,6 +9,7 @@
 	"main": "dist/index.cjs",
 	"module": "dist/index.js",
 	"types": "dist/index.d.ts",
+	"typings": "dist/index.d.ts",
 	"files": [
 		"dist/*"
 	],
@@ -17,13 +18,14 @@
 	},
 	"scripts": {
 		"typecheck": "tsc --noEmit",
-		"build": "parcel build && tsc",
-		"clean": "rm -rf dist",
+		"build": "parcel build && npx api-extractor run --local --verbose",
+		"clean": "rm -rf dist; mkdir dist",
 		"watch": "parcel watch",
 		"release": "npm run clean; npm run build; npm publish",
 		"test": "jest --verbose"
 	},
 	"devDependencies": {
+		"@microsoft/api-extractor": "^7.34.0",
 		"@parcel/packager-ts": "^2.8.3",
 		"@parcel/transformer-typescript-types": "^2.8.3",
 		"@types/jest": "^27.5.0",

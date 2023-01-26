@@ -1,6 +1,8 @@
 import { useMemo, useRef, useState } from "react";
-import { AnyReducers } from "./AnyReducers";
-import { reducersToDispatcher } from "./reducersToDispatcher";
+import { AnyReducers, AssertReducers } from "./AnyReducers";
+import { Dispatcher, reducersToDispatcher } from "./reducersToDispatcher";
+
+export type { AnyReducers, Dispatcher, AssertReducers };
 
 function useRefCurrent<T>(value: T) {
 	const ref = useRef<T>(value);
@@ -8,6 +10,10 @@ function useRefCurrent<T>(value: T) {
 	return ref;
 }
 
+/**
+ * useState with a dispatch function
+ * @public
+ */
 export function useStateDispatch<S, R extends AnyReducers<S>>(
 	initialState: S,
 	reducers: R
