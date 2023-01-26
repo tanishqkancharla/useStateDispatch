@@ -5,10 +5,10 @@
 	"description": "A helper React hook for state and reducers",
 	"keywords": [],
 	"license": "MIT",
-	"main": "dist/index.cjs",
 	"source": "src/index.ts",
+	"main": "dist/index.cjs",
 	"module": "dist/index.js",
-	"types": "dist/types.d.ts",
+	"types": "dist/index.d.ts",
 	"files": [
 		"dist/*"
 	],
@@ -17,7 +17,7 @@
 	},
 	"scripts": {
 		"typecheck": "tsc --noEmit",
-		"build": "parcel build",
+		"build": "parcel build && tsc",
 		"clean": "rm -rf dist",
 		"watch": "parcel watch",
 		"release": "npm run clean; npm run build; npm publish",
